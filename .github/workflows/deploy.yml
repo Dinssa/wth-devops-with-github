@@ -3,6 +3,9 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: 
   workflow_dispatch
 
+env:
+    targetEnv: t14dydevops-test
+
 jobs: 
     build-and-deploy:
         runs-on: ubuntu-latest
@@ -15,3 +18,4 @@ jobs:
           with:
             resourceGroupName: ${{ vars.AZURE_RESOURCE_GROUP }}
             template: ./ARM-Templates/container-webapp-template.json
+            parameters: webAppName=${{ env.targetEnv }}
