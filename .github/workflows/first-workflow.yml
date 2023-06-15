@@ -8,3 +8,12 @@ jobs:
       
       - run: echo "hello step-1"
       - run: echo "hello step-2"
+
+  job-2:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Team 14 Task 4
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'Team 14!'
+        color: 'red'
